@@ -1,0 +1,37 @@
+{
+   "background": {
+      "scripts": [
+         "background.js"
+    ],
+    "persistent": true
+   },
+   "browser_action": {
+      "default_icon": "img/icon_128.png",
+      "default_popup": "popup.html",
+      "default_title": "TruerenT",
+      "icons": [ "img/icon_128.png", "img/icon_48.png", "img/icon_16.png","img/na.png"],
+      "name": "TruerenT"
+   },
+   "content_scripts": [ {
+      "css": [ "css/style.css","css/jquery-gauge.css"],
+      "js": [ "js/jquery.min.js","content.js","js/gauge.min.js","js/jquery-gauge.min.js"],
+      "matches": ["http://www.explorimmo.com/*","http://www.logic-immo.com/*","http://www.pap.fr/*","https://www.leboncoin.fr/*","http://www.seloger.com/*"],
+      "run_at": "document_end"
+   } ],
+   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://connect.facebook.net https://apis.google.com https://cdn.api.twitter.com https://syndication.twimg.com https://platform.twitter.com; object-src 'self'",
+   "description": "Estimation Instantanée, Automatique et Précise",
+   "icons": {
+      "128": "img/icon_128.png",
+      "16": "img/icon_16.png",
+      "48": "img/icon_48.png"
+   },
+   "manifest_version": 2,
+   "name": "TruerenT",
+   "permissions": ["webRequest","activeTab","http://www.explorimmo.com/*","http://www.logic-immo.com/*","http://www.pap.fr/*","https://www.leboncoin.fr/*","https://*.dmjsapis.com/","https://truerent.eu/*","http://www.seloger.com/*","storage","https://www.truerent.fr/*"],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.0.0.1",
+   "web_accessible_resources": [ "img/logox300.png","img/twitter.pgn","img/facebook.png","img/na.png"]
+}
+
+
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <meta charset='utf-8'>
+  <head>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/gauge.min.js"></script>
+    <script type="text/javascript" src="popup.js"></script>
+   <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div style="width:300px;padding:5px;">
+    <a href="https://www.truerent.fr" target="_blank" title="TruerenT"><img style="border: 0;" src="img/logox300.png" width="300" alt="logo"/></a>
+  </div>
+    <h3 style="font-weight:bold; text-align:center;"></h3>
+    <div id="otherWebsiteResponse">
+        Nous vous assurons que <b> payez le bon prix pour votre logement </b></br></br>
+
+        <b>Nous couvrons</b> : Paris, Lyon, Marseille, Lille, Bordeaux, Montpellier, Nantes, Nice, Reims, Rennes, Strasbourg, Toulon et Toulouse. </br></br>
+
+        <b>Sur les sites</b> : Seloger, Logic-Immo, Pap, et Le Bon Coin. </br></br>
+
+        Les autres villes, parkings, locaux commerciaux et bateaux sont pour bientôt... </br></br>N'hesitez pas à nous contacter si vous avez des suggestions !  
+        </br></br> <a href="https://www.facebook.com/Truerent-671223849734554/" target="_blank" title="TruerenT"><img src="img/facebook.png" class="share"></a><span id="contactTwitter"></span>   
+    </div>
+    <div id="filteredListingResponse">
+        <p align="center">༼☯﹏☯༽</p>
+        <b>Nous ne couvrons que les appartements, les lofts et les maisons <sup id="note">*</sup></b> pour Paris, Lyon, Marseille, Lille, Bordeaux, Montpellier, Nantes, Nice, Reims, Rennes, Strasbourg, Toulon et Toulouse </br></br> Les autres villes, parkings, locaux commerciaux et bateaux sont pour bientôt...</br></br>
+        N'hesitez pas à nous contacter si vous avez des questions !  
+        </br></br> <a href="https://www.facebook.com/Truerent-671223849734554/" target="_blank" title="TruerenT"><img src="img/facebook.png" class="share"></a><span id="contactTwitterNotSupported"></span>
+    </div>
+    <div id="supportedWebsiteResponse" style="display: none">
+    <table border="1" cellpadding="3" style="border-collapse:collapse;">
+      <tr>
+        <canvas id="gauge"></canvas><b><label id="gaugeLabel"></label></b>
+      </tr>
+    </table>
+    <table border="1" cellpadding="3" style="border-collapse:collapse;">
+      <tr>
+        <th  class="tg-yw4l noBorder" valign="bottom"><p align="left" id="price2Market"></p></th>
+        <th  class="tg-yw4l noBorder" valign="bottom"><p align="right" id="confidenceIndex"></p></th>
+      </tr>
+    </table>
+    <table class="tg">
+      <tr>
+        <th class="noBorder">
+          <table>
+          <tr>
+            <caption><p><b></b></p></caption>
+            <th class="tg-yw4l noBorder" valign="bottom" id="twitter"></th>
+            <th class="tg-yw4l noBorder" valign="bottom"><a href="https://www.facebook.com/Truerent-671223849734554/" target="_blank" title="TruerenT"><img src="img/facebook.png" class="share"></a></th>
+          </tr>
+          </table>
+        </th>
+        <th class="noBorder">
+          <table id="priceFeedback">
+          <caption><b>Estimation</b></caption>
+          <tr>
+            <th class="tg-yw4l noBorder"><button type="button" id="priceTooLow">trop basse</button></th>
+            <th class="tg-yw4l noBorder"><button type="button" id="priceCorrect">juste</button></th>
+            <th class="tg-yw4l noBorder"><button type="button" id="priceTooHigh">trop haute</button></th>
+          </tr>
+        </table>
+      </th>
+    </tr>
+  </table>
+    </br>
+    <table class="tg trueprice" align="center">
+    <tr>
+    <th class="tg-baqh" id="priceListing"><b>Prix (h.c.)</b></th>
+    <th class="tg-yw4l" id="utilitiesLabel"></th>
+    <th class="tg-yw4l"><b>Prix/m² (h.c.)</b></th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l" id="priceValue"></td>
+    <td class="tg-yw4l" id="utilitiesValue"></td>
+    <td class="tg-yw4l" id="pricem2Value"></td>
+  </tr>
+  </table></br>
+  <table class="tg trueprice" align="center">
+  <caption><b id="pricePredHeader">TruerenT Index (h.c.)*</b></caption>
+  <tr>
+    <th class="tg-baqh" id="priceMinLabel"><b>Loyer Min</b></th>
+    <th class="tg-yw4l" id="priceRefLabel"><b>Loyer Estimé</b></th>
+    <th class="tg-yw4l" id="priceMaxLabel"><b>Loyer Max</b></th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l" id="truerentMin"></td>
+    <td class="tg-yw4l" id="truerentRef"></td>
+    <td class="tg-yw4l" id="truerentMax"></td>
+  </tr>
+</table>
+<div id="rentAlur"></div>
+</div>
+<div id="disclaimer">
+  <p style="font-size:8px" align=left>* les loyers de référence sont à titre informatifs, et peuvent être approximatifs.</p>
+</div>
+  </body>
+</html>
